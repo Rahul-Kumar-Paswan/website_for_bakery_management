@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Orders</title>
+    <!-- You can link your stylesheets or add inline styles here if needed -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add Orders</h1>
+
+    <form method="POST" action="{{ url_for('add_orders') }}">
+        <label for="order_id">Order ID:</label>
+        <input type="text" name="order_id" required>
+
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required>
+
+        <label for="cake">Cake:</label>
+        <input type="text" name="cake" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" required>
+
+        <label for="cost_per_cake">Cost Per Cake:</label>
+        <input type="number" name="cost_per_cake" required>
+
+        <label for="total_cost">Total Cost:</label>
+        <input type="number" name="total_cost" required>
+
+        <label for="order_date">Order Date:</label>
+        <input type="text" name="order_date" placeholder="YYYY-MM-DD HH:MM:SS" required>
+
+        <button type="submit">Add Order</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
